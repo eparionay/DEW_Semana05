@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let opciones ={
+        method : "PUT",
+        body : JSON.stringify({
+            "id": "5",
+            "title": "Aprendiendo FORTRAN",
+            "views": 300
+        })
+    }
+
+
+    fetch("http://localhost:3000/posts", opciones)
+        .then(response => response.text())
+        .then(data=>{
+            let respuesta = JSON.parse(data);
+            console.log(respuesta);
+            /*let arreglo = respuesta.results;
+            for (let i=0; i< arreglo.length; i++){
+                console.log(arreglo[i].name);
+                console.log(arreglo[i].url);
+                console.log("*************");
+            }*/
+        });
+</script>
+
+
+
+
+</html>

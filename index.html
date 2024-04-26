@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--REGISTRAR NOMBRE Y APELLIDO EN UN ARREGLO Y QUE LUEGO, SE 
+        MUESTRE EN LA CONSOLA.
+    -->
+    <label>Ingrese Nombre</label>
+    <input type="text" id="txtNombre">
+    <br>
+    <label>Ingrese APellido</label>
+    <input type="text" id="txtApellido">
+    <button id="btnIngresar" type="button">Ingresar</button>
+    <button id="btnMostrar" type="button" onclick="mostrarDatos()">Mostrar Datos</button>
+    <button id="btnQuitarElemento" type="button" onclick="quitarElemento()">Eliminar Elemento</button>
+    <button id="btnDestructurar" type="button" onclick="destructurar()">Destructurar Arreglo</button>
+    <button id="btnAgregarElemento" type="button" onclick="agregar()">Agregar Elemento</button>
+
+</body>
+<script>
+
+    function agregar(){
+        let edad= 20;
+        let nombre = "juan";
+        let persona = {
+            "edad" : edad, "nombre": nombre
+        };
+        console.log(persona);
+        persona.apellido= "Rose";
+        console.log(persona);
+    }
+
+    function quitarElemento(){
+        let edad= 20;
+        let nombre = "juan";
+        let persona = {
+            "edad" : edad, "nombre": nombre
+        };
+        console.log(persona);
+        delete persona.edad;
+        console.log(persona);
+    }
+
+    function destructurar(){
+
+        let arreglo = [];
+        let edadP= 20;
+        let nombreP = "juan";
+        let persona = {
+            "edad" : edadP, "nombre": nombreP,
+            "apellido": "perez", "dni": "78945621"
+
+        };
+
+        arreglo.push(persona);
+
+        console.log(arreglo[0].edad);
+        console.log(arreglo[0].nombre);
+        console.log(arreglo[0].asd);
+
+
+
+
+
+
+    }
+
+
+
+
+    let arregloPersona = [];
+
+    let boton = document.getElementById("btnIngresar");
+    boton.addEventListener("click", function(){
+        let nombre = document.getElementById("txtNombre").value;
+        let apellido =document.getElementById("txtApellido").value;
+        let persona = {
+            "nombre" : nombre, 
+            "apellido": apellido
+        };
+        arregloPersona.push(persona);
+        console.log(arregloPersona);
+    });
+
+    
+
+
+
+
+
+
+</script>
+
+
+</html>
